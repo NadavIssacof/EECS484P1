@@ -107,7 +107,7 @@ CREATE TABLE Albums(
     album_created_time TIMESTAMP NOT NULL,
     album_modified_time TIMESTAMP	 
     album_link VARCHAR2(2000) NOT NULL,
-    album_visibility VARCHAR2(100) NOT NULL,
+    album_visibility VARCHAR2(100) NOT NULL  CHECK (album_visibility IN ('Attending', 'Unsure', 'Declines', 'Not_Replied')),
     cover_photo_id INTEGER NOT NULL,
     FOREIGN KEY (album_owner_id) REFERENCES Users (user_id)
 );
